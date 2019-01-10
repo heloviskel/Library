@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Menu.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Slider.css" />
+</head>
+
+
+<body>
+    @if (ViewBag.Condition)
+    {
+        <u style="margin-left:1000px;margin-top:300px">@User.Identity.Name</u>
+        <a href="/Account/Logoff" class="btn" style="color:indianred; margin-left:1175px;">Sign Out</a>
+    }
+    else
+    {
+        <div><a href="/Account/Login" style="margin-left:1175px; color:lightseagreen" class="btn">Sign In</a></div>
+    }
+    <h1>&lt;&lt;Solo~Space&gt;&gt;</h1>
+    <h2>LibrAry</h2>
+    <a href="/Home/Index" class="btn">Home</a>
+    <a href="/Books/Index" class="btn">Books</a>
+    @if (User.Identity.Name == "Oleh" || User.Identity.Name == "Bohdan")
+    {
+        <a href="/Customers/Index" class="btn">Customers</a>
+    }
+    <a href="/Home/Contact" class="btn">Contact</a>
+    <br /><br /><br />
+                <div id="carousel" class="carousel">
+
+                    <div class="gallery">
+                        <ul class="images">
+                            <li><img src="~/Images/Books Covers/images1.jpg" /></li>
+                            <li><img src="~/Images/Books Covers/images2.jpg" /></li>
+                            <li><img src="~/Images/Books Covers/images3.jpg" /></li>
+                            <li><img src="~/Images/Books Covers/images4.jpg" /></li>
+                            <li><img src="~/Images/Books Covers/images5.jpg" /></li>
+                            <li><img src="~/Images/Books Covers/images6.jpg" /></li>
+                        </ul>
+                    </div>
+                    <button class="arrow prev">⇦</button>
+                    <button class="arrow next">⇨</button>
+                </div>
+    <script src="~/Scripts/MyScripts/Slider.js"></script>
+</body>
+
+</html>

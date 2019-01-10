@@ -1,0 +1,78 @@
+﻿@model MyLibrary.Models.RegisterModel
+@{
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Menu.css"/>
+    <link rel="stylesheet" type="text/css" href="~/Content/Sign Up_In.css"/>
+</head>
+
+<body>
+    <div class="main-form" style="margin-top:1px">
+        <i class="logo"></i>
+        <h2>Sign Up</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <div>
+                @Html.LabelFor(model => model.Name)
+
+                <div>
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+
+            @*<div>
+                @Html.LabelFor(model => model.Email)
+
+                <div>
+                    @Html.EditorFor(model=>model.Email)
+                    @Html.ValidationMessageFor(model=>model.Email)
+                </div>
+            </div>*@
+
+            <div>
+                @Html.LabelFor(model => model.Password)
+
+                <div>
+                    @Html.EditorFor(model => model.Password)
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.ConfirmedPassword)
+
+                <div>
+                    @Html.EditorFor(model => model.ConfirmedPassword)
+                    @Html.ValidationMessageFor(model => model.ConfirmedPassword)
+                </div>
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.Age)
+
+                <div>
+                    @Html.EditorFor(model => model.Age)
+                    @Html.ValidationMessageFor(model => model.Age)
+                </div>
+            </div>
+            <br /><br />
+            <div>
+                <div>
+                    <input type="submit" value="Register" class="btn" />
+                </div>
+            </div>
+            <br />
+            <div>
+                <label>Already have an account?</label>
+                <br /><br />
+                <a href="/Account/Login" class="btn">Log In</a>
+            </div>
+        }
+    </div>
+</body>

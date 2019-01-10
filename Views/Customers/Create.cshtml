@@ -1,0 +1,35 @@
+﻿@model MyLibrary.Models.Customer
+@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Customers_Operations.css" />
+</head>
+
+<body>
+    <h2>Create</h2>
+    <div class="main-form">
+        <form method="post" action="">
+            @Html.AntiForgeryToken()
+            <input type="text" name="Name" placeholder="Name" />
+            <input type="text" name="Adress" placeholder="Adress" />
+            <input type="number" name="Birth_year" placeholder="Birth year" />
+            <input type="number" name="Tel__number" placeholder="Tel. number" />
+            <p>
+                <label style="font-size:13px">Giveaway date</label>
+                <input type="datetime-local" name="Giveaway_date" />
+            </p>
+            <p>
+                <label style="font-size:13px">Returning date</label>
+                <input type="datetime-local" name="Returning_date" />
+            </p>
+
+            <input type="submit" value="Create" />
+            <div>
+                <a class="link" href="/Customers/Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</body>

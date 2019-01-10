@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Редагувати книгу";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model MyLibrary.Models.Book
+<h2>Книга № @Model.Book_ID</h2>
+@using (Html.BeginForm("EditBook", "Home", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.Book_ID)
+        <p>
+            @Html.LabelFor(m => m.Title, "Title")
+            <br />
+            @Html.EditorFor(m => m.Title)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Author, "Author")
+            <br />
+            @Html.EditorFor(m => m.Author)
+
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Price, "Price")
+            <br />
+            @Html.EditorFor(m => m.Price)
+        </p>
+        <p><input type="submit" value="Отправить" /></p>
+    </fieldset>
+}
+
+

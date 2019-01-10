@@ -1,0 +1,132 @@
+﻿* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../Images/1489398127_6016_poly-lakeside.jpg");
+    font-family: Arial;
+    font-size: 12px;
+    color: #C4BCB0;
+}
+
+input[type="text"],
+input[type="password"] {
+    background: #fff78c;
+    border: 0;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 3px;
+    width: 100%;
+    margin: 5px 0;
+    outline: medium none;
+    color: #b83b5e;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    outline: medium none;
+    margin-right: 10px;
+}
+
+    input[type="checkbox"]::before {
+        width: 9px;
+        height: 9px;
+        content: "";
+        display: block;
+        border: 3px solid #f08a5d;
+        border-radius: 10px;
+        position: absolute;
+    }
+
+    input[type="checkbox"]:checked::after {
+        width: 5px;
+        height: 5px;
+        content: "";
+        display: block;
+        background: #fff78c;
+        border-radius: 5px;
+        position: absolute;
+        left: 5px;
+        top: 5px;
+    }
+
+input[type="submit"] {
+    display: block;
+    padding: 10px;
+    background: #b83b5e;
+    border: 0;
+    border-radius: 3px;
+    font-weight: bold;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+    input[type="submit"]:hover {
+        background: #6a2c70;
+    }
+
+.main-form {
+    width: 350px;
+    margin: 1px auto;
+    padding: 50px;
+    border: 1px solid rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    background: #232931;
+}
+
+
+.main-form > label {
+    display: block;
+    margin: 10px 0 15px;
+    line-height: 15px;
+    cursor: pointer;
+}
+
+.main-form > div {
+    margin-top: 1px;
+}
+
+a {
+    color: #C4BCB0;
+    text-decoration: none;
+}
+
+.main-form > a {
+    font-size: 11px;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.main-form > div > a:first-child {
+    font-weight: bold;
+    padding: 0px;
+    margin-top:0px;
+}
+
+.main-form > div > a:nth-child(2) {
+    border: 1px solid #3DA087;
+    display: inline-block;
+    border-radius: 3px;
+    color: #3DA087;
+    font-weight: bold;
+    padding: 7px 15px;
+    margin-left: 28px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+    .main-form > div > a:nth-child(2):hover {
+        background: #3DA087;
+        color: #fff;
+    }

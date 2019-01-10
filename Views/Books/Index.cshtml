@@ -1,0 +1,117 @@
+﻿@model IEnumerable<MyLibrary.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Table.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Menu.css" />
+</head>
+<body>
+    <h1>&lt;Books&gt;</h1>
+    <div>
+        <a href="/Home/Index" class="btn">Home</a>
+        <a href="/Customers/Index" class="btn">Customers</a>
+        @if (User.Identity.Name == "Oleh" || User.Identity.Name == "Bohdan")
+        {
+            <a href="/Books/Create" class="btn">Create new Book!</a>
+        }
+    </div>
+    <br />
+    <div>
+        @*Filter*@
+        <form method="get">
+            <b>Search options:</b>
+            @Html.RadioButton("option","Title",new { @class = "btn" })<text>Title</text>
+            @Html.RadioButton("option","Author")<text>Author</text>
+            @Html.RadioButton("option","Release_year")<text>Release year</text>
+            @Html.RadioButton("option","Genre")<text>Genre</text>
+            @Html.TextBox("search")<input type="submit" style="height:20px" value="Search" />
+        </form>
+    </div>
+    <br />
+    <table class="container">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cover)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Release_year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Publishment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cover)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Release_year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Publishment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="@Url.Action("Details", new { id = item.Book_ID })" title="Details">
+                                <img class="img" src='@Url.Content("~/Images/if_save_info_60024.png")' />
+                            </a>
+                        </li>
+                        @if (User.Identity.Name=="Oleh"||User.Identity.Name=="Bohdan")//filtering
+                        {
+                            <li>
+                                <a href="@Url.Action("Edit", new { id = item.Book_ID })" title="Edit">
+                                    <img class="img" src='@Url.Content("~/Images/if_save_edit_60021.png")' />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Delete", new { id = item.Book_ID })" title="Delete">
+                                    <img class="img" src='@Url.Content("~/Images/if_save_delete_60017.png")' />
+                                </a>
+                            </li>
+                        }
+                        <br /><br />
+                        <li> <a href="@Url.Action("Order",new { id = item.Book_ID })" class="btn">Order</a></li>
+                    </ul>
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

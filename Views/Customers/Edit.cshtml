@@ -1,0 +1,29 @@
+﻿@model MyLibrary.Models.Customer
+@{
+    ViewBag.Title = "Edit";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Customers_Operations.css" />
+</head>
+
+<body>
+    <h2>Edit</h2>
+    <div class="main-form">
+        <form method="post" action="">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="Customer_ID" value="@Model.Customer_ID" />
+            <input type="text" name="Name" placeholder="Name" value="@Model.Name" />
+            <input type="text" name="Adress" placeholder="Adress" value="@Model.Adress" />
+            <input type="number" name="Birth_year" placeholder="Birth year" value="@Model.Birth_year" />
+            <input type="number" name="Tel__number" placeholder="Tel. number" value="@Model.Tel__number" />
+            <input type="datetime" name="Giveaway_date" placeholder="Giveaway date" value="@Model.Giveaway_date" />
+            <input type="datetime" name="Returning_date" placeholder="Returning date" value="@Model.Returning_date" />
+            <input type="submit" value="Edit" />
+            <div>
+                <a class="link" href="/Customers/Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</body>

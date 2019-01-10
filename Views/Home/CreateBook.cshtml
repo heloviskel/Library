@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Додати книгу";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model MyLibrary.Models.Book
+
+@using (Html.BeginForm())
+{
+    <br /><br />
+    @Html.LabelFor(m => m.Cover, "Cover");
+    <br />
+    @Html.EditorFor(m => m.Cover);
+    <br /><br />
+    @Html.LabelFor(m => m.Title, "Title");
+    <br />
+    @Html.EditorFor(m => m.Title);
+    <br /><br />
+    @Html.LabelFor(m => m.Author, "Author");
+    <br />
+    @Html.EditorFor(m => m.Author);
+    <br /><br />
+    @Html.LabelFor(m => m.Release_year, "Release year");
+    <br />
+    @Html.EditorFor(m => m.Release_year);
+    <br /><br />
+    @Html.LabelFor(m => m.Publishment, "Publishment");
+    <br />
+    @Html.EditorFor(m => m.Publishment);
+    <br /><br />
+    @Html.LabelFor(m => m.Content, "Content");
+    <br />
+    @Html.EditorFor(m => m.Content);
+    <br /><br />
+    @Html.LabelFor(m => m.Price, "Price");
+    <br />
+    @Html.EditorFor(m => m.Price);
+    <br /><br />
+    @Html.LabelFor(m => m.Genre, "Genre");
+    <br />
+    @Html.EditorFor(m => m.Genre);
+    <br /><br />
+    @Html.LabelFor(m => m.Date_of_coming, "Date of coming");
+    <br />
+    @Html.EditorFor(m => m.Date_of_coming);
+    <br /><br />
+    @Html.LabelFor(m => m.Amount_of_coming, "Amount of coming");
+    <br />
+    @Html.EditorFor(m => m.Amount_of_coming);
+    <br /><br />
+    @Html.LabelFor(m => m.Inventary_number, "Inventary number");
+    <br />
+    @Html.EditorFor(m => m.Inventary_number);
+    <br /><br />
+    @Html.LabelFor(m => m.Availability, "Availability");
+    <br />
+    @Html.EditorFor(m => m.Availability);
+    <br /><br />
+
+    <input type="submit" value="Add Book!" />
+}

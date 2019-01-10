@@ -1,0 +1,29 @@
+﻿@model MyLibrary.Models.Customer
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Customers_Operations.css" />
+</head>
+<body>
+    <h2 style="margin-left:120px">Delete</h2>
+    <div class="main-form">
+        <form method="post" action="">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="Customer_ID" value="@Model.Customer_ID" readonly />
+            <input type="text" name="Name" placeholder="Name" value="@Model.Name" readonly />
+            <input type="text" name="Adress" placeholder="Adress" value="@Model.Adress" readonly />
+            <input type="number" name="Birth_year" placeholder="Birth year" value="@Model.Birth_year" readonly/>
+            <input type="number" name="Tel__number" placeholder="Tel. number" value="@Model.Tel__number" readonly/>
+            <input type="datetime" name="Giveaway_date" value="@Model.Giveaway_date" readonly />
+            <input type="datetime" name="Returning_date" value="@Model.Returning_date" readonly />
+            <input type="submit" value="Delete" />
+            <div>
+                <a class="link" href="/Customers/Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</body>

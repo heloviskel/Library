@@ -1,0 +1,35 @@
+﻿@model MyLibrary.Models.Book
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Books_Operations.css" />
+</head>
+<body>
+    <h2 style="margin-left:120px">Edit</h2>
+    <div class="main-form">
+        <form method="post" action="">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="Book_ID" value="@Model.Book_ID" />
+            <input type="text" name="Title" placeholder="Title" value="@Model.Title" />
+            <input type="text" name="Author" placeholder="Author" value="@Model.Author" />
+            <input type="number" name="Release_year" placeholder="Release year" value="@Model.Release_year" />
+            <input type="text" name="Publishment" placeholder="Publishment" value="@Model.Publishment" />
+            <input type="text" name="Content" placeholder="Content" value="@Model.Content" />
+            <input type="number" step="0.01" name="Price" placeholder="Price" value="@Model.Price" />
+            <input type="text" name="Genre" placeholder="Genre" value="@Model.Genre" />
+            <input type="datetime-local" name="Date_of_coming" placeholder="Date of coming" value="@Model.Date_of_coming" />
+            <input type="number" name="Amount_of_coming" placeholder="Amount of coming" value="@Model.Amount_of_coming" />
+            <input type="number" name="Inventary_number" placeholder="Inventary number" value="@Model.Inventary_number" />
+            <label><input type="checkbox" name="Availability"> Availability</label>
+            
+            <input type="submit" value="Edit" />
+            <div>
+                <a class="link" href="/Books/Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</body>

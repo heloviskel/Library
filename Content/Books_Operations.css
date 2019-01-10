@@ -1,0 +1,138 @@
+﻿* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    font-size: 12px;
+    color: #C4BCB0;
+    background-color: #232931;
+    background-image: none;
+}
+
+h1 {
+    color: #c06c84;
+    font-weight: 100;
+    font-family: Tamburin;
+    font-size: 60px;
+}
+
+h2 {
+    color: #c0c0c0;
+    font-weight: 100;
+    font-family: Tamburin;
+    font-size: 45px;
+    margin-left: 110px;
+}
+
+.title {
+    color: #50BFA4;
+    text-align: inherit;
+    font-weight: 100;
+    font-family: Tamburin;
+    font-size: 30px;
+}
+
+.btn {
+    color: #999;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    font-size: 12px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+input[type=text], input[type=password],
+input[type=datetime], input[type=number],
+input[type=datetime-local]{
+    background: #fff78c;
+    border: 0;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 3px;
+    width: 100%;
+    margin: 5px 0;
+    outline: medium none;
+    color: #b83b5e;
+}
+
+
+
+
+input[type="submit"] {
+    display: block;
+    padding: 10px;
+    margin: 10px 80px;
+    background: #b83b5e;
+    border: 0;
+    border-radius: 3px;
+    font-weight: bold;
+    width: 50%;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+    input[type="submit"]:hover {
+        background: #6a2c70;
+    }
+
+.main-form {
+    height: inherit;
+    width: inherit;
+    padding-right: 1000px;
+}
+
+
+
+    .main-form > label {
+        display: block;
+        margin: 1px 0 15px;
+        line-height: 15px;
+        cursor: pointer;
+    }
+
+    .main-form > div {
+        margin: 1px 10px;
+    }
+
+a {
+    color: #C4BCB0;
+    text-decoration: none;
+}
+
+
+.link {
+    font-size: 11px;
+    border: 1px solid #3DA087;
+    text-align: center;
+    display: inline-block;
+    border-radius: 3px;
+    color: #3DA087;
+    width:auto;
+    font-weight: bold;
+    padding: 7px 15px;
+    margin: 10px 120px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+    .link:hover {
+        background: #3DA087;
+        color: #fff;
+    }
+
+
+
+@font-face {
+    font-family: "Tamburin";
+    font-weight: normal;
+    src: url(../fonts/glyphicons-halflings-regular.ttf);
+}
